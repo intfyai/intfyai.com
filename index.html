@@ -2,26 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>INTFY · AI Commerce & Algorithmic Trading Token</title>
+  <title>intelfyai • IntelF Token (INTF)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="INTFY is a utility-first crypto asset powering AI-driven commerce, multi-agent systems and algorithmic trading."
-  />
-  <link rel="icon" type="image/svg+xml" href="intfy-ai.svg" />
+  <meta name="description" content="intelfyai – IntelF Token (INTF) on BNB Smart Chain. AI Commerce, Algo Trading and Multi-Agent Copilot for Web3." />
   <style>
     :root {
-      --bg: #020617;
-      --bg-soft: #020818;
-      --card: #020617;
-      --border: rgba(148, 163, 184, 0.24);
-      --accent: #22c55e;
-      --accent-soft: rgba(34, 197, 94, 0.12);
-      --muted: #9ca3af;
-      --text: #e5e7eb;
-      --heading: #f9fafb;
-      --danger: #f97373;
-      --gradient: radial-gradient(circle at top left, #22c55e40, transparent 55%);
+      --bg: #050510;
+      --bg-soft: #090919;
+      --accent: #04e5b2;
+      --accent-soft: rgba(4, 229, 178, 0.12);
+      --accent-strong: #33ffcc;
+      --text: #f5f5ff;
+      --muted: #8d8da6;
+      --border: #19192b;
+      --danger: #ff4d6a;
     }
 
     * {
@@ -30,53 +24,23 @@
       padding: 0;
     }
 
-    html,
     body {
-      height: 100%;
-      background: var(--bg);
-      color: var(--text);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        sans-serif;
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #141431 0, #050510 55%);
+      color: var(--text);
+      min-height: 100vh;
     }
 
-    body {
-      display: flex;
-      justify-content: center;
-      padding: 32px 16px;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    main {
-      width: 100%;
-      max-width: 1080px;
-      background:
-        radial-gradient(circle at 0 0, #22c55e18, transparent 60%),
-        radial-gradient(circle at 100% 0, #0ea5e918, transparent 60%),
-        #020617;
-      border-radius: 24px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow:
-        0 0 0 1px rgba(15, 23, 42, 0.9),
-        0 32px 120px rgba(15, 23, 42, 0.9);
-      padding: 24px 24px 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    main::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 20% 0, rgba(56, 189, 248, 0.08), transparent 55%),
-        radial-gradient(circle at 80% 0, rgba(34, 197, 94, 0.08), transparent 55%);
-      opacity: 0.7;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .shell {
-      position: relative;
-      z-index: 1;
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
     }
 
     header {
@@ -84,34 +48,30 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin-bottom: 24px;
+      margin-bottom: 32px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
-    .logo {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #facc15, #a16207 55%, #111827);
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 0, #ffffff 0, #04e5b2 25%, #050510 70%);
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      box-shadow:
-        0 0 0 1px rgba(148, 163, 184, 0.45),
-        0 10px 30px rgba(15, 23, 42, 0.9);
     }
 
-    .logo img {
+    .brand-logo img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      display: block;
+      object-fit: contain;
     }
 
     .brand-text {
@@ -121,926 +81,422 @@
     }
 
     .brand-name {
-      font-size: 16px;
       font-weight: 600;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: var(--heading);
+      font-size: 13px;
+      color: var(--accent-strong);
     }
 
-    .brand-tagline {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
+    .brand-sub {
+      font-size: 12px;
       color: var(--muted);
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 16px;
-      font-size: 12px;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
+    .nav-link {
+      font-size: 13px;
       padding: 6px 10px;
       border-radius: 999px;
       border: 1px solid transparent;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.16s ease-out;
+      color: var(--muted);
+      transition: 0.15s ease;
     }
 
-    nav a span.dot {
-      width: 6px;
-      height: 6px;
+    .nav-link:hover {
+      border-color: var(--accent-soft);
+      color: var(--accent-strong);
+      background: rgba(4, 229, 178, 0.06);
+    }
+
+    .nav-cta {
       border-radius: 999px;
-      background: var(--accent);
+      border: 1px solid rgba(4, 229, 178, 0.5);
+      background: linear-gradient(90deg, #04e5b2, #7396ff);
+      color: #050510;
+      font-weight: 600;
+      font-size: 13px;
+      padding: 7px 14px;
+      box-shadow: 0 0 24px rgba(4, 229, 178, 0.4);
     }
 
-    nav a:hover {
-      border-color: rgba(148, 163, 184, 0.45);
-      color: #e5e7eb;
-      background: rgba(15, 23, 42, 0.9);
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 24px;
     }
 
-    .nav-primary {
-      border-color: rgba(34, 197, 94, 0.35);
-      background: rgba(21, 128, 61, 0.16);
-      color: #bbf7d0;
-    }
-
-    .nav-primary:hover {
-      background: rgba(22, 163, 74, 0.3);
-      border-color: rgba(34, 197, 94, 0.6);
-    }
-
-    .nav-social {
-      border-color: rgba(148, 163, 184, 0.25);
+    @media (max-width: 840px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        justify-content: flex-start;
+      }
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
-      gap: 28px;
-      margin-bottom: 24px;
+      padding: 24px 20px;
+      border-radius: 24px;
+      background: radial-gradient(circle at top left, #1d2344 0, #090919 55%);
+      border: 1px solid rgba(79, 79, 120, 0.4);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.8);
+      position: relative;
+      overflow: hidden;
     }
 
-    .eyebrow {
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
       font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--muted);
-      margin-bottom: 6px;
+      background: rgba(4, 229, 178, 0.08);
+      color: var(--accent-strong);
+      border: 1px solid rgba(4, 229, 178, 0.3);
+      margin-bottom: 12px;
     }
 
     .hero-title {
-      font-size: clamp(28px, 3vw + 10px, 38px);
-      line-height: 1.12;
-      font-weight: 650;
-      color: var(--heading);
+      font-size: 26px;
+      line-height: 1.1;
       margin-bottom: 10px;
     }
 
-    .hero-highlight {
-      background: linear-gradient(to right, #22c55e, #38bdf8);
+    .hero-title span {
+      background: linear-gradient(90deg, #04e5b2, #7cf7ff);
       -webkit-background-clip: text;
-      background-clip: text;
       color: transparent;
     }
 
     .hero-subtitle {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--muted);
-      max-width: 440px;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+      max-width: 420px;
       margin-bottom: 18px;
     }
 
-    .badge {
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      color: var(--muted);
-      background: rgba(15, 23, 42, 0.9);
-    }
-
-    .badge-accent {
-      border-color: rgba(34, 197, 94, 0.8);
-      background: rgba(21, 128, 61, 0.18);
-      color: #bbf7d0;
-    }
-
-    .hero-actions {
+    .hero-pills {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 14px;
-    }
-
-    .btn {
-      font-size: 12px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      transition: all 0.16s ease-out;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: linear-gradient(120deg, #22c55e, #16a34a);
-      border-color: rgba(34, 197, 94, 0.8);
-      color: #052e16;
-      font-weight: 600;
-      box-shadow: 0 12px 30px rgba(21, 128, 61, 0.45);
-    }
-
-    .btn-primary:hover {
-      filter: brightness(1.02);
-      transform: translateY(-0.5px);
-      box-shadow: 0 14px 36px rgba(21, 128, 61, 0.55);
-    }
-
-    .btn-secondary {
-      background: rgba(15, 23, 42, 0.92);
-      border-color: rgba(148, 163, 184, 0.5);
-      color: var(--text);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(15, 23, 42, 0.96);
-      border-color: rgba(148, 163, 184, 0.9);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      border-color: rgba(148, 163, 184, 0.35);
-      color: var(--muted);
-    }
-
-    .btn-ghost:hover {
-      background: rgba(15, 23, 42, 0.90);
-      color: #e5e7eb;
-    }
-
-    .hero-meta {
-      font-size: 11px;
-      color: var(--muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .hero-meta code {
-      font-size: 11px;
-    }
-
-    .hero-panel {
-      border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background:
-        radial-gradient(circle at 0 0, rgba(34, 197, 94, 0.12), transparent 56%),
-        radial-gradient(circle at 100% 0, rgba(56, 189, 248, 0.12), transparent 56%),
-        rgba(15, 23, 42, 0.96);
-      padding: 14px 14px 12px;
-      display: grid;
-      grid-template-rows: auto auto;
-      gap: 10px;
-    }
-
-    .panel-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 11px;
-      color: var(--muted);
+      gap: 6px;
+      margin-bottom: 18px;
     }
 
     .pill {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(120, 120, 180, 0.7);
+      color: #c0c0ff;
+      background: rgba(8, 8, 30, 0.8);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      border: 1px solid rgba(4, 229, 178, 0.5);
+      padding: 8px 14px;
+      font-size: 13px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 10px;
-      padding: 3px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: rgba(15, 23, 42, 0.96);
+      cursor: pointer;
+      background: rgba(4, 229, 178, 0.08);
+      color: var(--accent-strong);
+      transition: 0.15s ease;
     }
 
-    .pill-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.22);
+    .btn-secondary {
+      background: rgba(10, 10, 30, 0.9);
+      border-color: rgba(80, 80, 130, 0.8);
+      color: var(--muted);
     }
 
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 8px;
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 18px rgba(4, 229, 178, 0.3);
+    }
+
+    .hero-footnote {
+      font-size: 11px;
+      color: var(--muted);
       margin-top: 8px;
     }
 
-    .metric {
-      border-radius: 12px;
-      padding: 8px 10px;
-      background: rgba(15, 23, 42, 0.96);
-      border: 1px solid rgba(148, 163, 184, 0.3);
+    .side-card {
+      padding: 20px 18px;
+      border-radius: 24px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
-    .metric-label {
-      font-size: 10px;
-      color: var(--muted);
-      margin-bottom: 3px;
-    }
-
-    .metric-value {
-      font-size: 13px;
+    .side-title {
+      font-size: 15px;
       font-weight: 600;
-      color: var(--heading);
+      margin-bottom: 4px;
     }
 
-    .metric-sub {
-      font-size: 10px;
+    .token-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 10px;
+      font-size: 12px;
+    }
+
+    .token-label {
       color: var(--muted);
-      margin-top: 2px;
+    }
+
+    .token-value {
+      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 11px;
+      background: #050510;
+      padding: 6px 8px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      word-break: break-all;
+    }
+
+    .token-value.highlight {
+      border-color: rgba(4, 229, 178, 0.7);
+      background: rgba(4, 229, 178, 0.06);
+      color: var(--accent-strong);
     }
 
     .chip-row {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-top: 8px;
+      font-size: 11px;
     }
 
     .chip {
-      font-size: 10px;
-      padding: 3px 8px;
+      padding: 4px 8px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: rgba(15, 23, 42, 0.92);
+      background: rgba(10, 10, 30, 0.9);
+      border: 1px solid rgba(80, 80, 130, 0.8);
       color: var(--muted);
     }
 
-    .section-row {
+    .section {
+      margin-top: 28px;
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
-      gap: 18px;
-      margin-bottom: 18px;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 840px) {
+      .section {
+        grid-template-columns: 1fr;
+      }
     }
 
     .card {
-      border-radius: 16px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: rgba(15, 23, 42, 0.96);
-      padding: 14px 14px 12px;
+      padding: 18px 16px;
+      border-radius: 20px;
+      background: rgba(6, 6, 20, 0.9);
+      border: 1px solid var(--border);
     }
 
     .card h2 {
-      font-size: 14px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
+      font-size: 15px;
       margin-bottom: 8px;
     }
 
-    .card-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--heading);
-      margin-bottom: 6px;
-    }
-
-    .card-sub {
-      font-size: 12px;
+    .card p {
+      font-size: 13px;
       color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .pill-tagline {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 10px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(34, 197, 94, 0.7);
-      background: rgba(21, 128, 61, 0.2);
-      color: #bbf7d0;
       margin-bottom: 10px;
     }
 
-    .pill-tagline span.dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #bbf7d0;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      font-size: 12px;
-    }
-
-    .feature {
-      padding: 8px 9px;
-      border-radius: 12px;
-      background: rgba(15, 23, 42, 0.96);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-    }
-
-    .feature h3 {
-      font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 4px;
-      color: var(--heading);
-    }
-
-    .feature p {
-      font-size: 11px;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    .tokenomics-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
-      font-size: 12px;
-      margin-bottom: 10px;
-    }
-
-    .tokenomics-item {
-      padding: 7px 9px;
-      border-radius: 10px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: rgba(15, 23, 42, 0.96);
-    }
-
-    .tokenomics-label {
-      font-size: 11px;
-      color: var(--muted);
-      margin-bottom: 2px;
-    }
-
-    .tokenomics-value {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--heading);
-    }
-
-    .roadmap-list {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      font-size: 12px;
-    }
-
-    .phase {
-      border-radius: 12px;
-      padding: 8px 10px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.96);
-    }
-
-    .phase-label {
-      font-size: 11px;
-      color: var(--muted);
-      margin-bottom: 2px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-    }
-
-    .phase-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--heading);
-      margin-bottom: 4px;
-    }
-
-    .phase ul {
+    .card ul {
       list-style: none;
+      font-size: 13px;
+      color: var(--muted);
+      display: grid;
+      gap: 6px;
       padding-left: 0;
     }
 
-    .phase li {
-      font-size: 11px;
-      color: var(--muted);
-      margin-bottom: 2px;
-    }
-
-    .security-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      font-size: 12px;
-    }
-
-    .security-item {
-      border-radius: 12px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.96);
-      padding: 8px 10px;
-    }
-
-    .security-item h3 {
-      font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 4px;
-      color: var(--heading);
-    }
-
-    .security-item p {
-      font-size: 11px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .security-item code {
-      font-size: 10px;
+    .card ul li::before {
+      content: "•";
+      color: var(--accent);
+      margin-right: 6px;
     }
 
     footer {
-      margin-top: 14px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(31, 41, 55, 0.95);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 10px;
+      margin-top: 32px;
       font-size: 11px;
       color: var(--muted);
-    }
-
-    .footer-links {
       display: flex;
+      justify-content: space-between;
       flex-wrap: wrap;
       gap: 8px;
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
     }
 
-    .footer-links a {
-      color: var(--muted);
-      text-decoration: none;
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: rgba(15, 23, 42, 0.9);
-      transition: all 0.16s ease-out;
-    }
-
-    .footer-links a:hover {
-      color: #e5e7eb;
-      border-color: rgba(148, 163, 184, 0.75);
-    }
-
-    .footer-right {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      align-items: center;
-    }
-
-    .footer-right span {
-      opacity: 0.9;
-    }
-
-    @media (max-width: 880px) {
-      main {
-        padding: 20px 16px 18px;
-        border-radius: 20px;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-      }
-
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero-panel {
-        order: -1;
-      }
-
-      .section-row {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .feature-grid,
-      .tokenomics-grid,
-      .roadmap-list,
-      .security-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    @media (max-width: 520px) {
-      body {
-        padding: 16px 10px;
-      }
-
-      header {
-        gap: 10px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .btn,
-      .btn-secondary,
-      .btn-ghost {
-        justify-content: center;
-        width: 100%;
-      }
+    .risk {
+      color: var(--danger);
     }
   </style>
 </head>
 <body>
-  <main>
-    <div class="shell">
-      <header>
-        <div class="brand">
-          <div class="logo">
-            <!-- Kendi logo dosyanı buraya koy; index.html ile aynı klasörde logo-intfyai.png varsa: -->
-            <img src="logo-intfyai.png" alt="INTFY logo" />
-          </div>
-          <div class="brand-text">
-            <div class="brand-name">INTFY</div>
-            <div class="brand-tagline">AI Commerce · Algo Trading · Multi-Agent</div>
-          </div>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-logo">
+          <!-- Logo dosyana göre src'yi güncelle -->
+          <img src="intelf-logo.svg" alt="intelfyai logo" />
         </div>
-        <nav>
-          <a href="#utility">Utility</a>
-          <a href="#tokenomics">Tokenomics</a>
-          <a href="#roadmap">Roadmap</a>
-          <a href="#security">Security</a>
-          <a
-            class="nav-social"
-            href="https://x.com/IntfyAI"
-            target="_blank"
-            rel="noreferrer"
-          >
-            X / Twitter
-          </a>
-          <a
-            class="nav-social"
-            href="https://github.com/intfyai"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>
-          <a
-            class="nav-primary"
-            href="https://app.uniswap.org/swap?outputCurrency=0xeEA97646bCb4b2740B1092FDA86c8352F6CAa1ED&chain=ethereum"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span class="dot"></span>
-            Buy INTFY
-          </a>
-        </nav>
-      </header>
+        <div class="brand-text">
+          <div class="brand-name">intelfyai</div>
+          <div class="brand-sub">AI Commerce • Algo Trading • Multi-Agent Copilot</div>
+        </div>
+      </div>
+      <nav>
+        <a class="nav-link" href="https://x.com/IntfyAI" target="_blank" rel="noopener">X (Twitter)</a>
+        <a class="nav-link" href="https://github.com/intfyai/intfyai.com" target="_blank" rel="noopener">GitHub</a>
+        <a class="nav-link" href="mailto:hello@intfyai.com">Contact</a>
+        <a class="nav-cta" href="#token">INTF Token</a>
+      </nav>
+    </header>
 
+    <main>
       <section class="hero">
+        <div class="hero-tag">
+          <span>● LIVE ON BNB SMART CHAIN</span>
+          <span>IntelF Token (INTF)</span>
+        </div>
+        <h1 class="hero-title">
+          <span>AI copilot</span> for<br />commerce & trading.
+        </h1>
+        <p class="hero-subtitle">
+          intelfyai; e-ticaret, Shopify ve algoritmik trading için IntelF Token (INTF) tarafından desteklenen
+          çok ajanlı (multi-agent) bir AI copilot ekosistemi olarak tasarlandı.
+        </p>
+
+        <div class="hero-pills">
+          <span class="pill">AI Commerce Automation</span>
+          <span class="pill">Shopify & E-commerce</span>
+          <span class="pill">Algo Trading Modules</span>
+          <span class="pill">Multi-Agent Orchestration</span>
+          <span class="pill">BEP-20 • BNB Smart Chain</span>
+        </div>
+
+        <div class="hero-buttons">
+          <a class="btn" href="#token">View INTF token details</a>
+          <a class="btn btn-secondary" href="https://bscscan.com/address/0x038aB6836B74dA98c7C27C15d1Bf3a24eA231778" target="_blank" rel="noopener">
+            View on BscScan
+          </a>
+        </div>
+
+        <div class="hero-footnote">
+          Staking, DEX likiditesi ve gelişmiş AI modülleri kademeli olarak devreye alınacaktır. Bu sayfa yalnızca
+          bilgilendirme amaçlıdır; yatırım tavsiyesi değildir.
+        </div>
+      </section>
+
+      <aside class="side-card" id="token">
         <div>
-          <div class="eyebrow">Ethereum · Utility Token</div>
-          <h1 class="hero-title">
-            Fueling <span class="hero-highlight">AI Commerce</span> & Automated Trading
-          </h1>
-          <p class="hero-subtitle">
-            INTFY is a utility-first crypto asset designed to power AI-driven commerce,
-            multi-agent systems, and a future algorithmic trading engine — without
-            degen taxes or fake APYs.
-          </p>
-
-          <div class="hero-badges">
-            <span class="badge badge-accent">0% Buy/Sell Tax</span>
-            <span class="badge">Fixed Supply · 1,000,000,000 INTFY</span>
-            <span class="badge">No Mint · No Blacklist · No Honeypot</span>
-          </div>
-
-          <div class="hero-actions">
-            <a
-              class="btn btn-primary"
-              href="https://app.uniswap.org/swap?outputCurrency=0xeEA97646bCb4b2740B1092FDA86c8352F6CAa1ED&chain=ethereum"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Buy on Uniswap
-            </a>
-            <a
-              class="btn btn-secondary"
-              href="https://etherscan.io/token/0xeEA97646bCb4b2740B1092FDA86c8352F6CAa1ED"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View on Etherscan
-            </a>
-            <a
-              class="btn btn-ghost"
-              href="#security"
-            >
-              Security &amp; Compliance
-            </a>
-          </div>
-
-          <div class="hero-meta">
-            <div>
-              Contract:
-              <code>0xeEA97646bCb4b2740B1092FDA86c8352F6CAa1ED</code>
-            </div>
-            <div>Chain: Ethereum Mainnet · Decimals: 18</div>
+          <div class="side-title">IntelF Token (INTF)</div>
+          <div style="font-size:12px; color:var(--muted); margin-bottom:8px;">
+            BNB Smart Chain üzerinde sabit arzlı, vergisiz BEP-20 token.
           </div>
         </div>
 
-        <aside class="hero-panel">
-          <div class="panel-header">
-            <span>INTFY Live Snapshot</span>
-            <span class="pill">
-              <span class="pill-dot"></span>
-              On-chain verified
-            </span>
+        <div class="token-grid">
+          <div class="token-label">Name</div>
+          <div class="token-value">IntelF Token</div>
+
+          <div class="token-label">Ticker</div>
+          <div class="token-value">INTF</div>
+
+          <div class="token-label">Chain</div>
+          <div class="token-value">BNB Smart Chain (BSC)</div>
+
+          <div class="token-label">Standard</div>
+          <div class="token-value">BEP-20 (ERC-20 compatible)</div>
+
+          <div class="token-label">Total Supply</div>
+          <div class="token-value">1,000,000,000 INTF</div>
+
+          <div class="token-label">Contract</div>
+          <div class="token-value highlight">
+            0x038aB6836B74dA98c7C27C15d1Bf3a24eA231778
           </div>
+        </div>
 
-          <div>
-            <div class="metrics-grid">
-              <div class="metric">
-                <div class="metric-label">Total Supply</div>
-                <div class="metric-value">1,000,000,000</div>
-                <div class="metric-sub">INTFY</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Tax</div>
-                <div class="metric-value">0%</div>
-                <div class="metric-sub">Buy / Sell / Transfer</div>
-              </div>
-              <div class="metric">
-                <div class="metric-label">Status</div>
-                <div class="metric-value">Utility-first</div>
-                <div class="metric-sub">No meme economics</div>
-              </div>
-            </div>
+        <div class="chip-row">
+          <span class="chip">Mint: disabled</span>
+          <span class="chip">Buy/Sell Tax: 0%</span>
+          <span class="chip">Blacklist: none</span>
+          <span class="chip">Burn function: enabled</span>
+          <span class="chip">Ownership: OpenZeppelin Ownable</span>
+        </div>
+      </aside>
+    </main>
 
-            <div class="chip-row">
-              <span class="chip">OpenZeppelin ERC-20</span>
-              <span class="chip">No mint</span>
-              <span class="chip">No blacklist</span>
-              <span class="chip">Non-inflationary</span>
-            </div>
-          </div>
-        </aside>
-      </section>
-
-      <section id="utility" class="section-row">
-        <article class="card">
-          <h2>Utility</h2>
-          <div class="card-title">AI-native token for real products</div>
-          <p class="card-sub">
-            INTFY is not a meme. It is designed as the value layer for a stack of AI
-            agents, commerce automation tools, and a future algorithmic trading engine.
-          </p>
-
-          <div class="feature-grid">
-            <div class="feature">
-              <h3>AI Commerce</h3>
-              <p>
-                Agents that research products, manage pricing, launch campaigns and
-                track performance across Shopify and e-commerce platforms.
-              </p>
-            </div>
-            <div class="feature">
-              <h3>Algo Trading</h3>
-              <p>
-                Strategy engine (in development) combining on-chain data, sentiment and
-                risk models to execute trades with discipline, not hype.
-              </p>
-            </div>
-            <div class="feature">
-              <h3>Multi-Agent Stack</h3>
-              <p>
-                Specialized agents (pricing, creative, CRO, research, campaigns) working
-                together, with INTFY as the access and coordination layer.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article id="tokenomics" class="card">
-          <h2>Tokenomics</h2>
-          <div class="card-title">Simple, transparent, non-inflationary</div>
-          <p class="card-sub">
-            No hidden mechanics. No surprise taxes. No stealth minting. INTFY is a
-            fixed-supply ERC-20 with clean token economics.
-          </p>
-
-          <div class="tokenomics-grid">
-            <div class="tokenomics-item">
-              <div class="tokenomics-label">Total Supply</div>
-              <div class="tokenomics-value">1,000,000,000 INTFY</div>
-            </div>
-            <div class="tokenomics-item">
-              <div class="tokenomics-label">Tax</div>
-              <div class="tokenomics-value">0% / 0% / 0%</div>
-              <div class="metric-sub">Buy · Sell · Transfer</div>
-            </div>
-            <div class="tokenomics-item">
-              <div class="tokenomics-label">Minting</div>
-              <div class="tokenomics-value">Disabled</div>
-              <div class="metric-sub">No supply inflation</div>
-            </div>
-            <div class="tokenomics-item">
-              <div class="tokenomics-label">Ownership Logic</div>
-              <div class="tokenomics-value">Transparent</div>
-              <div class="metric-sub">No hidden upgrade proxy</div>
-            </div>
-          </div>
-
-          <p class="card-sub">
-            <strong>Staking:</strong> The INTFY staking contract is deployed and verified,
-            but <strong>currently inactive</strong>. Staking will be launched in
-            <strong>Phase 2</strong> as a utility feature, not as degen yield farming.
-          </p>
-        </article>
-      </section>
-
-      <section id="roadmap" class="card" style="margin-bottom: 18px;">
-        <h2>Roadmap</h2>
-        <div class="card-title">From token to full AI commerce stack</div>
-        <p class="card-sub">
-          INTFY is being built step-by-step: launch clean, secure infrastructure first,
-          then gradually unlock utility, automation and advanced trading features.
+    <section class="section">
+      <div class="card">
+        <h2>About intelfyai</h2>
+        <p>
+          intelfyai; zincir üstü veriler, e-ticaret sinyalleri ve trading altyapısını tek ekosistemde birleştirmeyi
+          hedefleyen bir AI copilot projesidir. IntelF Token (INTF) bu ekosistemin yerel varlığıdır.
         </p>
+        <ul>
+          <li>Shopify ve e-ticaret için ürün, fiyatlama ve reklam optimizasyonu sağlayan AI Commerce modülleri.</li>
+          <li>Merkezi ve merkeziyetsiz borsalarda çalışacak algoritmik trade stratejileri için modüler altyapı.</li>
+          <li>Multi-agent AI yapısı: fiyatlama ajanı, kreatif ajan, kampanya ajanı, araştırma ajanı gibi rollere ayrılmış
+              akıllı ajanlar.</li>
+          <li>Gelecekte CEX/DEX entegrasyonları, staking ve yönetişim akışları ile genişleyecek token ekonomisi.</li>
+        </ul>
+      </div>
 
-        <div class="roadmap-list">
-          <div class="phase">
-            <div class="phase-label">Phase I</div>
-            <div class="phase-title">Foundation</div>
-            <ul>
-              <li>✓ Token deployment on Ethereum</li>
-              <li>✓ Verified contracts on Etherscan</li>
-              <li>✓ Initial Uniswap liquidity</li>
-              <li>✓ Security &amp; website live</li>
-            </ul>
-          </div>
-          <div class="phase">
-            <div class="phase-label">Phase II</div>
-            <div class="phase-title">Utility &amp; Access</div>
-            <ul>
-              <li>Staking program activation</li>
-              <li>AI agent console &amp; dashboards</li>
-              <li>Commerce &amp; trading tooling</li>
-              <li>Access tiers gated by INTFY</li>
-            </ul>
-          </div>
-          <div class="phase">
-            <div class="phase-label">Phase III</div>
-            <div class="phase-title">Expansion</div>
-            <ul>
-              <li>Cross-chain &amp; CEX integrations</li>
-              <li>Advanced algo trading modules</li>
-              <li>Marketplace &amp; partner ecosystem</li>
-              <li>Governance &amp; long-term alignment</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="security" class="card">
-        <h2>Security</h2>
-        <div class="card-title">Security &amp; compliance by design</div>
-        <p class="card-sub">
-          INTFY prioritizes predictable on-chain behavior, clean token economics and
-          transparent contracts over short-term hype.
+      <div class="card">
+        <h2>Tokenomics & roadmap (özet)</h2>
+        <ul>
+          <li>Toplam arz: 1,000,000,000 INTF – tamamı kontrat deploy anında mint edildi, ek mint fonksiyonu yok.</li>
+          <li>Vergi yok: alım/satım işlemlerinde ekstra vergi veya dinamik fee mekanizması bulunmuyor.</li>
+          <li>Güvenlik odağı: OpenZeppelin tabanlı kontratlar, şeffaf ve denetlenebilir yapı.</li>
+          <li>Planlananlar: DEX likidite havuzları, LP kilidi, staking kontratı ve CEX listeleme başvuruları.</li>
+        </ul>
+        <p class="risk">
+          Uyarı: Kripto varlıklar yüksek risk içerir. Bu site yalnızca bilgilendirme amaçlıdır, finansal veya yatırım tavsiyesi değildir.
         </p>
+      </div>
+    </section>
 
-        <div class="security-grid">
-          <div class="security-item">
-            <h3>Contract transparency</h3>
-            <p>
-              INTFY uses standard OpenZeppelin ERC-20 contracts. There is no custom
-              transfer logic, no honeypot behavior and no hidden restrictions.
-            </p>
-            <p>
-              • Fixed supply: <code>1,000,000,000 INTFY</code><br />
-              • No mint function<br />
-              • No buy/sell tax<br />
-              • No blacklist / anti-sell logic
-            </p>
-          </div>
-          <div class="security-item">
-            <h3>Not a honeypot</h3>
-            <p>
-              Buying, selling and transferring INTFY are fully unrestricted. The token
-              has been successfully bought and sold on Uniswap, and the source code is
-              verified on Etherscan.
-            </p>
-            <p>
-              <strong>Token contract:</strong><br />
-              <code>0xeEA97646bCb4b2740B1092FDA86c8352F6CAa1ED</code>
-            </p>
-          </div>
-          <div class="security-item">
-            <h3>Staking (inactive for now)</h3>
-            <p>
-              The staking contract is deployed and verified, but rewards are not yet
-              enabled. Staking will go live in Phase 2 with a fixed rewards pool and
-              no inflationary minting.
-            </p>
-            <p>
-              <strong>Staking contract:</strong><br />
-              <code>0x5318CbBb2E67d386cf58Ba633F5daE09f1f9ffAa</code>
-            </p>
-          </div>
-          <div class="security-item">
-            <h3>Launch model</h3>
-            <p>
-              No ICO, no presale, no private sale. INTFY launched as a fair token with
-              direct liquidity on Uniswap and no vested insider allocations.
-            </p>
-          </div>
-          <div class="security-item">
-            <h3>Network</h3>
-            <p>
-              INTFY is deployed on Ethereum mainnet, inheriting battle-tested security,
-              consensus and infrastructure.
-            </p>
-          </div>
-          <div class="security-item">
-            <h3>Philosophy</h3>
-            <p>
-              No hidden mechanics, no surprise changes. INTFY is designed as a clean,
-              non-inflationary base asset for AI commerce and trading products.
-            </p>
-          </div>
-        </div>
-      </section>
+    <footer>
+      <span>© <span id="year"></span> intelfyai • IntelF Token (INTF)</span>
+      <span>Built by SyncSft / intelfyai – all rights reserved.</span>
+    </footer>
+  </div>
 
-      <footer>
-        <div class="footer-links">
-          <a
-            href="https://etherscan.io/token/0xeEA97646bCb4b2740B1092FDA86c8352F6CAa1ED"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Etherscan
-          </a>
-          <a
-            href="https://app.uniswap.org/swap?outputCurrency=0xeEA97646bCb4b2740B1092FDA86c8352F6CAa1ED&chain=ethereum"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Uniswap
-          </a>
-          <a href="#security">Security &amp; Compliance</a>
-          <a
-            href="https://x.com/IntfyAI"
-            target="_blank"
-            rel="noreferrer"
-          >
-            X / Twitter
-          </a>
-          <a
-            href="https://github.com/intfyai"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>
-        </div>
-        <div class="footer-right">
-          <span>INTFY · AI Commerce &amp; Automated Trading</span>
-        </div>
-      </footer>
-    </div>
-  </main>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
